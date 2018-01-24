@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <p>Compute success rate of RAID rebuild after one disk failure:</p>
+  <ul id="input">
+    <li>
+      <label for="disk_size">Single disk size:</label>
+      <span><input id="disk_size" type="number" value="1" step="0.1"> TB</span>
+    </li>
+    <li>
+      <label for="sector_size" title="Modern disks with Advanced Format (AF) use sector size of 4096 bytes. Legacy disks may use 512 bytes sector.">Sector size:</label>
+      <span><input id="sector_size" type="number" value="4096"> bytes</span>
+    </li>
+    <li>
+      <label for="disks">Total number of disks:</label>
+      <span><input id="disks" type="number" value="4"></span>
+    </li>
+    <li>
+      <label for="ure_rate_exp" title="Or 'Non-recoverable read errors per bits read'. This can be found in specification sheet of disk. Consumer-level disks usually have 1 in 10^14, while enterprise-levels may have 1 in 10^15.">Unrecoverable error rate:</label>
+      <span>1 in 10^<input id="ure_rate_exp" type="number" value="14"></span>
+    </li>
+  </ul>
+  <button id="compute">Compute</button>
+  <ul id="output" hidden>
+    <li>
+      <label>1 disk redundancy:</label>
+      <span id="one-disk"></span>
+    </li>
+    <li>
+      <label>2 disks redundancy:</label>
+      <span id="two-disk"></span>
+    </li>
+    <li>
+      <label>3 disks redundancy:</label>
+      <span id="three-disk"></span>
+    </li>
+  </ul>
+</body>
+</html>

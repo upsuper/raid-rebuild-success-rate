@@ -1,0 +1,13 @@
+[package]
+name = "raid-rebuild-success-rate-wasm-api"
+version = "0.1.0"
+authors = ["Xidorn Quan <me@upsuper.org>"]
+
+[dependencies]
+raid-rebuild-success-rate = { path = ".." }
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+debug = true

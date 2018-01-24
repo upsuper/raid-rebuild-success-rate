@@ -1,0 +1,7 @@
+[package]
+name = "raid-rebuild-success-rate"
+version = "0.1.0"
+authors = ["Xidorn Quan <me@upsuper.org>"]
+
+[dependencies]
+num-traits = "0.1"
